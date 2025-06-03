@@ -30,10 +30,27 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  sqflite: ^2.3.0
+  path: ^1.9.0
+  google_fonts: ^6.1.0
+  fluttertoast: ^8.2.2
+  provider: ^6.1.2 # opcional, útil para gerenciar estado
+  intl: ^0.19.0 # para saudação baseada na hora do dia
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+
 
 dev_dependencies:
   flutter_test:
