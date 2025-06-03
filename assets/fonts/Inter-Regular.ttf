@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Projeto Flutter',
+      theme: ThemeData(
+        textTheme: GoogleFonts.interTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Home')),
+      body: Center(
+        child: Text(
+          'Olá, Flutter com Inter!',
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
+      ),
+    );
+  }
+}
