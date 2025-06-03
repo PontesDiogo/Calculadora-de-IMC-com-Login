@@ -6,8 +6,8 @@ class AppTheme {
       fontFamily: 'Inter',
       primarySwatch: Colors.blue,
       textTheme: const TextTheme(
-        headline1: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-        bodyText1: TextStyle(fontSize: 16),
+        displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+        bodyLarge: TextStyle(fontSize: 16),
       ),
     );
   }
