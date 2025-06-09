@@ -14,7 +14,7 @@ class _LoginViewState extends State<LoginView> {
 
   void _login() {
     if (_formKey.currentState!.validate()) {
-      // Validação OK → Em breve lógica de autenticação
+      // Aqui você pode adicionar lógica de autenticação
       Navigator.pushReplacementNamed(context, '/imc');
     }
   }
@@ -28,8 +28,8 @@ class _LoginViewState extends State<LoginView> {
         child: Form(
           key: _formKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Spacer(),
               const Text(
                 "Bem-vindo!",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -40,7 +40,8 @@ class _LoginViewState extends State<LoginView> {
                 decoration: const InputDecoration(labelText: 'E-mail'),
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
-                  final emailRegex = RegExp(r'^[\w\-.]+@([\w-]+\.)+[\w-]{2,4}$');
+                  final emailRegex =
+                      RegExp(r'^[\w\-.]+@([\w-]+\.)+[\w-]{2,4}$');
                   if (value == null || !emailRegex.hasMatch(value)) {
                     return 'Informe um e-mail válido';
                   }
@@ -53,7 +54,10 @@ class _LoginViewState extends State<LoginView> {
                 decoration: const InputDecoration(labelText: 'Senha'),
                 obscureText: true,
                 validator: (value) {
-                  if (value == null || value.length < 8 || !RegExp(r'[A-Za-z]').hasMatch(value) || !RegExp(r'\d').hasMatch(value)) {
+                  if (value == null ||
+                      value.length < 8 ||
+                      !RegExp(r'[A-Za-z]').hasMatch(value) ||
+                      !RegExp(r'\d').hasMatch(value)) {
                     return 'A senha deve ter 8+ caracteres, com letras e números';
                   }
                   return null;
@@ -64,14 +68,12 @@ class _LoginViewState extends State<LoginView> {
                 onPressed: _login,
                 child: const Text("Entrar"),
               ),
-              const SizedBox(height: 12),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/register');
                 },
-                child: const Text("Não tem conta? Cadastre-se aqui"),
+                child: const Text("Não tem conta? Cadastre-se"),
               ),
-              const Spacer(),
             ],
           ),
         ),
