@@ -94,7 +94,7 @@ lib/
 ### Passos
 
 ```bash
-git clone https://github.com/seu-usuario/flutter-imc-app.git
+git clone https://github.com/PontesDiogo/flutter-imc-app.git
 cd flutter-imc-app
 flutter pub get
 flutter run
