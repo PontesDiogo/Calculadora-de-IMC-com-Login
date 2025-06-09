@@ -1,31 +1,34 @@
-class User {
-  final String firstName;
-  final String lastName;
+class UserModel {
+  final int? id;
+  final String nome;
+  final String sobrenome;
   final String email;
-  final String password;
+  final String senha;
 
-  User({
-    required this.firstName,
-    required this.lastName,
-    required this.email,
-    required this.password,
-  });
+  UserModel(
+      {this.id,
+      required this.nome,
+      required this.sobrenome,
+      required this.email,
+      required this.senha});
 
   Map<String, dynamic> toMap() {
     return {
-      'first_name': firstName,
-      'last_name': lastName,
+      'id': id,
+      'nome': nome,
+      'sobrenome': sobrenome,
       'email': email,
-      'password': password,
+      'senha': senha,
     };
   }
 
-  factory User.fromMap(Map<String, dynamic> map) {
-    return User(
-      firstName: map['first_name'],
-      lastName: map['last_name'],
+  factory UserModel.fromMap(Map<String, dynamic> map) {
+    return UserModel(
+      id: map['id'],
+      nome: map['nome'],
+      sobrenome: map['sobrenome'],
       email: map['email'],
-      password: map['password'],
+      senha: map['senha'],
     );
   }
 }
